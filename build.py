@@ -101,9 +101,9 @@ footer{{text-align:center;font-size:.85em;color:#555;padding:20px}}
 <main>
 {secs}
 <section id="visit"><h2>地址、營業時間及預約</h2>
-<p>地址：九龍旺角示範街 1 號（虛構地址）<br>營業時間：{s["hours"]}<br>電話／WhatsApp：+{PHONE}（示範號碼）</p>
-<iframe title="{s["name"]}位置地圖（旺角）" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=114.1650%2C22.3150%2C114.1750%2C22.3225&amp;layer=mapnik"></iframe>
-<p><a href="https://www.openstreetmap.org/search?query={MAP_Q}" rel="noopener">在 OpenStreetMap 查看旺角地圖</a>（地圖位置僅供示範）</p>
+<p>地址：九龍旺角示範街 1 號（虛構地址）<br>營業時間：{s["hours"]}<br>電話／WhatsApp：<a href="tel:+{PHONE}">+852 1234 5678</a>（示範號碼）</p>
+<iframe title="{s["name"]}位置地圖（旺角）" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=114.1650%2C22.3150%2C114.1750%2C22.3225&amp;layer=mapnik&amp;marker=22.3193%2C114.1694"></iframe>
+<p><a href="https://www.openstreetmap.org/?mlat=22.3193&amp;mlon=114.1694#map=17/22.3193/114.1694" rel="noopener">在 OpenStreetMap 查看旺角地圖</a>（地圖位置僅供示範）</p>
 <p class="note">※ 本網站為示範作品：店名、地址、電話、評價均為虛構。</p></section>
 </main>
 <a class="wa fix" href="{w}" rel="noopener">{s["cta"]}（示範）</a>
@@ -112,4 +112,48 @@ footer{{text-align:center;font-size:.85em;color:#555;padding:20px}}
     open(f"{d}/index.html","w").write(page)
 open("robots.txt","w").write(f"User-agent: *\nAllow: /\nSitemap: {BASE}/sitemap.xml\n")
 open("sitemap.xml","w").write('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'+f"<url><loc>{BASE}/</loc></url>\n"+"".join(f"<url><loc>{BASE}/{d}/</loc></url>\n" for d in SITES)+"</urlset>\n")
-open("index.html","w").write('<!DOCTYPE html><html lang="zh-HK"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>香港小商家單頁網站示範</title><meta name="description" content="香港小商家單頁網站示範作品集：茶餐廳及美容院。"></head><body><h1>示範作品集</h1><ul><li><a href="cha-chaan-teng/">港味茶餐廳</a></li><li><a href="beauty-salon/">美麗軒美容院</a></li></ul></body></html>')
+root_title="香港小商家單頁網站示範作品集"
+root_desc="為香港小商家設計嘅手機優先單頁網站示範：茶餐廳及美容院，附 WhatsApp 預約按鈕。"
+im=Image.new("RGB",(1200,630)); dr=ImageDraw.Draw(im)
+for x in range(1200):
+    t=x/1199; dr.line([(x,0),(x,630)],fill=(int(176+(125-176)*t),int(58+(60-58)*t),int(46+(152-46)*t)))
+dr.text((600,260),"小商家單頁網站",font=ImageFont.truetype(FONT,100,index=2),fill="white",anchor="mm")
+dr.text((600,400),"茶餐廳 · 美容院 示範作品集",font=ImageFont.truetype(FONT,46,index=2),fill="white",anchor="mm")
+dr.text((600,570),"示範網站 Demo",font=ImageFont.truetype(FONT,30,index=2),fill="white",anchor="mm")
+im.save("og-image.png")
+rld={"@context":"https://schema.org","@type":"CollectionPage","name":root_title,"description":root_desc,"url":BASE+"/","image":BASE+"/og-image.png","inLanguage":"zh-HK","hasPart":[{"@type":"WebPage","name":SITES[d]["name"],"url":f"{BASE}/{d}/"} for d in SITES]}
+cards="".join(f'<a class="card" href="{d}/" style="--a:{SITES[d]["c1"]};--b:{SITES[d]["c2"]}"><div class="ic">{SITES[d]["logo"]}</div><h2>{SITES[d]["name"]}</h2><p>{SITES[d]["desc"]}</p><span class="go">查看示範網站 →</span></a>' for d in SITES)
+open("index.html","w").write(f'''<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>{root_title}</title>
+<meta name="description" content="{root_desc}">
+<meta name="theme-color" content="#b03a2e">
+<link rel="canonical" href="{BASE}/">
+<meta property="og:type" content="website"><meta property="og:site_name" content="{root_title}">
+<meta property="og:title" content="{root_title}"><meta property="og:description" content="{root_desc}">
+<meta property="og:url" content="{BASE}/"><meta property="og:image" content="{BASE}/og-image.png">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:alt" content="小商家單頁網站示範作品集宣傳圖"><meta property="og:locale" content="zh_HK">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{root_title}"><meta name="twitter:description" content="{root_desc}"><meta name="twitter:image" content="{BASE}/og-image.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<script type="application/ld+json">{json.dumps(rld,ensure_ascii=False)}</script>
+<style>
+*{{box-sizing:border-box}}body{{margin:0;font-family:system-ui,"PingFang HK","Noto Sans TC",sans-serif;color:#222;line-height:1.7;background:#faf7f5}}
+header{{background:linear-gradient(135deg,#b03a2e,#7d3c98);color:#fff;text-align:center;padding:48px 20px}}header h1{{margin:0 0 .3em}}header p{{margin:0}}
+main{{max-width:900px;margin:auto;padding:24px 20px}}.grid{{display:grid;gap:18px}}
+.card{{display:block;background:#fff;border-radius:16px;padding:20px;text-decoration:none;color:#222;box-shadow:0 2px 10px #0002;border-top:6px solid var(--a)}}
+.card h2{{margin:.3em 0;color:var(--a)}}.card .go{{color:#fff;background:linear-gradient(135deg,var(--a),var(--b));padding:8px 16px;border-radius:999px;display:inline-block;font-weight:600}}
+.ic svg{{width:56px;height:56px}}.note{{color:#555;font-size:.9em;text-align:center}}
+footer{{text-align:center;font-size:.85em;color:#555;padding:20px}}
+@media(min-width:700px){{.grid{{grid-template-columns:1fr 1fr}}header{{padding:80px}}}}
+</style>
+</head>
+<body>
+<header><h1>小商家單頁網站示範作品集</h1><p>手機優先 · WhatsApp 預約 · 基本 SEO</p></header>
+<main><div class="grid">{cards}</div>
+<p class="note">※ 兩個網站嘅店名、地址、電話及評價均為虛構示範。</p></main>
+<footer>© 2026 網站製作 · 香港小商家單頁網站</footer>
+</body></html>''')
+open("favicon.svg","w").write('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><defs><linearGradient id="g"><stop offset="0" stop-color="#b03a2e"/><stop offset="1" stop-color="#7d3c98"/></linearGradient></defs><rect width="32" height="32" rx="8" fill="url(#g)"/><rect x="7" y="8" width="18" height="16" rx="3" fill="#fff"/><rect x="10" y="12" width="12" height="2" fill="#b03a2e"/><rect x="10" y="17" width="8" height="2" fill="#7d3c98"/></svg>')
