@@ -1,0 +1,70 @@
+/* 港味茶餐廳 — 較現代的港味:奶油紙 × 冰室綠 × 茶餐廳紅 */
+:root{--paper:#F6EBD3;--ink:#1E1A17;--red:#C8321F;--green:#2F6B5A;--brown:#8A5A3B;--gold:#FFC93C;--r:16px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.8 "Noto Sans TC",system-ui,"PingFang HK",sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:"Noto Serif TC",serif;line-height:1.25}
+a{color:var(--red)}
+.hero{background:var(--green);color:var(--paper);display:grid;gap:20px;padding:28px 20px 36px;position:relative;overflow:hidden;max-width:100%}
+.hero-copy{position:relative;z-index:1}
+.open{display:inline-block;background:var(--paper);color:var(--green);font-weight:700;font-size:.85rem;padding:2px 12px;border-radius:999px;border:2px solid var(--ink)}
+.eyebrow{margin:14px 0 0;letter-spacing:.3em;font-size:.85rem;color:var(--gold)}
+.hero h1{margin:.1em 0 .2em;font-weight:900;font-size:clamp(3rem,16vw,5.6rem);letter-spacing:.04em;display:flex;flex-direction:column}
+.hero h1 span:first-child{color:var(--paper)}
+.hero h1 span:last-child{color:var(--paper);-webkit-text-stroke:0;text-shadow:4px 4px 0 var(--red)}
+.hero h1 span{animation:rise .8s both}.hero h1 span:last-child{animation-delay:.15s}
+.lead{font-size:1.1rem;margin:0 0 20px;max-width:30em}
+.hero-img{width:100%;max-width:440px;height:auto;justify-self:center;border-radius:28px;border:3px solid var(--ink);box-shadow:8px 8px 0 var(--ink);background:var(--paper);animation:rise .9s .2s both}
+.steam{animation:float 5s ease-in-out infinite}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 22px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid var(--ink);transition:transform .2s,box-shadow .2s}
+.btn.red{background:var(--red);color:#fff;box-shadow:3px 3px 0 var(--ink)}.btn.ghost{background:transparent;color:var(--paper);border-color:var(--paper)}
+.btn:hover{transform:translateY(-2px)}
+.tile-strip{height:40px;background:url(assets/tile.svg) repeat-x;background-size:40px 40px;border-block:3px solid var(--ink)}
+nav{position:sticky;top:0;z-index:5;background:var(--paper);border-bottom:2px solid var(--ink);display:flex;gap:6px;overflow-x:auto;white-space:nowrap;padding:8px 12px;scrollbar-width:none}
+nav a{padding:6px 16px;border-radius:999px;color:var(--ink);text-decoration:none;font-weight:700;font-size:.95rem;border:2px solid transparent}
+nav a:hover,nav a:focus-visible{border-color:var(--red);color:var(--red)}
+main{max-width:860px;margin:auto;padding:0 20px}section{padding:36px 0 12px;scroll-margin-top:60px}
+h2{font-size:1.9rem;font-weight:900;margin:0 0 18px;position:relative;padding-bottom:12px}
+h2 small{display:block;font:500 .75rem "DM Mono",monospace;letter-spacing:.25em;color:var(--red);margin-bottom:2px}
+h2:after{content:"";position:absolute;left:0;bottom:0;width:64px;height:5px;background:var(--red);border-radius:3px;box-shadow:70px 0 0 var(--green)}
+h3{font-size:1.2rem;margin:.9em 0 .3em}
+.cards{list-style:none;padding:0;margin:0;display:grid;gap:16px}
+.cards li{background:#fff8e8;border:2px solid var(--ink);border-radius:var(--r);overflow:hidden;box-shadow:5px 5px 0 var(--ink);display:grid;grid-template-columns:120px 1fr;position:relative}
+.cards img{width:120px;height:100%;object-fit:cover;display:block}
+.cards div{padding:10px 16px}.cards h3{margin:.2em 0}.cards p{margin:0}.cards b{font-family:"DM Mono",monospace;color:var(--red);font-size:1.1rem}
+.stamp{position:absolute;top:8px;right:8px;background:var(--red);color:#fff;font:900 .75rem "Noto Serif TC",serif;padding:2px 8px;border-radius:4px;transform:rotate(6deg);letter-spacing:.1em}
+.menu-paper{background:#fff8e8;border:2px solid var(--ink);border-radius:var(--r);padding:8px 20px 20px;box-shadow:5px 5px 0 var(--ink);background-image:linear-gradient(var(--green),var(--green));background-size:100% 8px;background-repeat:no-repeat}
+.menu-paper h3{display:flex;justify-content:space-between;align-items:baseline;gap:10px;color:var(--green);border-bottom:2px solid var(--ink);padding-bottom:4px;margin-top:1.4em}
+.menu-paper h3 em{font:500 .85rem "DM Mono",monospace;color:var(--brown)}
+ul.price{list-style:none;padding:0;margin:0}ul.price li{display:flex;align-items:baseline;gap:8px;padding:7px 0}
+ul.price i{flex:1;border-bottom:2px dotted #8a5a3b88;transform:translateY(-4px);min-width:12px}
+ul.price b{font-family:"DM Mono",monospace;color:var(--red);white-space:nowrap}
+.about p{font-size:1.1rem;background:var(--green);color:var(--paper);padding:20px;border-radius:var(--r);border:2px solid var(--ink);box-shadow:5px 5px 0 var(--ink)}
+.note{color:#6b5a48;font-size:.9rem}
+.tickets{display:grid;gap:14px}
+blockquote{margin:0;background:#fffdf5;border:2px dashed var(--brown);border-radius:6px;padding:16px 18px;font-weight:500;position:relative}
+blockquote cite{display:block;font-style:normal;color:var(--brown);font-size:.9rem;margin-top:6px}
+details{border-bottom:2px solid #1e1a1722;padding:10px 0}summary{cursor:pointer;font-weight:700;min-height:32px}summary:hover{color:var(--red)}details p{margin:.4em 0}
+.plain{padding-left:1.2em}.plain li::marker{color:var(--red)}
+iframe{width:100%;height:280px;border:2px solid var(--ink);border-radius:var(--r);box-shadow:5px 5px 0 var(--ink)}
+.wa{display:flex;align-items:center;justify-content:center;background:var(--red);color:#fff;min-height:56px;border-radius:999px;font-size:1.1rem;text-decoration:none;font-weight:700;border:2px solid var(--ink);box-shadow:4px 4px 0 var(--ink)}
+.fix{position:fixed;bottom:14px;left:14px;right:14px;max-width:520px;margin:auto;z-index:9}
+.wa:before{content:"";width:22px;height:22px;margin-right:10px;background:#fff;border-radius:50%;-webkit-mask:radial-gradient(circle at 50% 45%,#000 55%,transparent 56%);mask:radial-gradient(circle at 50% 45%,#000 55%,transparent 56%);display:none}
+footer{text-align:center;font-size:.85rem;color:#fff;background:var(--ink);padding:24px 20px 110px;margin-top:40px}
+.js .rv{opacity:0;transform:translateY(14px);transition:opacity .6s,transform .6s}.js .rv.in{opacity:1;transform:none}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes float{50%{transform:translateY(-8px)}}
+@media(min-width:760px){.hero{grid-template-columns:1.1fr .9fr;align-items:center;padding:64px max(24px,calc((100vw - 980px)/2))}nav{justify-content:center}.cards{grid-template-columns:repeat(3,1fr)}.cards li{grid-template-columns:1fr}.cards img{width:100%;height:140px}.tickets{grid-template-columns:repeat(3,1fr)}}
+
+/* ---- AI 相片 hero:手機相片置於字下方(字壓在純色底),桌面相片靠右+冰室綠漸層疊層確保文字可讀 ---- */
+.hero{background:#1d4a3d;padding-bottom:0}
+.hero-bg{display:block;margin:8px -20px 0;position:relative;order:2}
+.hero-bg:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,#1d4a3d 0%,rgba(29,74,61,0) 28%)}
+.hero-bg .hero-img{display:block;width:100%;height:auto;max-width:none;border:0;border-radius:0;box-shadow:none;background:none;animation:none}
+.hero-copy{text-shadow:0 1px 12px rgba(10,30,24,.45)}
+.hero h1 span:last-child{text-shadow:4px 4px 0 var(--red)}
+.shop-photo{margin:0 0 18px}.shop-photo img{display:block;width:100%;height:auto;border:2px solid var(--ink);border-radius:var(--r);box-shadow:5px 5px 0 var(--ink)}
+.shop-photo figcaption{font-size:.8rem;color:#6b5a48;margin-top:8px}
+.cards img{background:#e8dcc0}
+@media(min-width:760px){.hero{grid-template-columns:1fr;min-height:500px;padding-bottom:64px}.hero-bg{position:absolute;top:0;right:0;bottom:0;width:64%;margin:0}.hero-bg:after{background:linear-gradient(90deg,#1d4a3d 0%,rgba(29,74,61,.8) 18%,rgba(29,74,61,0) 50%)}.hero-bg .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%}.hero-copy{max-width:560px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}

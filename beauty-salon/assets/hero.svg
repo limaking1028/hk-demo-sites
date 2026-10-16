@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 520" role="img" aria-label="柔光、陶碗與乾花的護膚插畫">
+<defs><linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F1E3DA"/><stop offset="1" stop-color="#C9A097"/></linearGradient><radialGradient id="s" cx=".3" cy=".2" r=".8"><stop offset="0" stop-color="#fff" stop-opacity=".8"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient></defs>
+<rect width="400" height="520" fill="url(#g)"/><rect width="400" height="520" fill="url(#s)"/>
+<g opacity=".35"><path d="M300 0h30v260h-30zM250 0h20v260h-20z" fill="#fff"/></g>
+<rect y="400" width="400" height="120" fill="#E7DDD0"/><rect y="400" width="400" height="3" fill="#B79B6A" opacity=".6"/>
+<path d="M60 400c0-60 40-90 100-90s100 30 100 90z" fill="#F7F3EE"/>
+<ellipse cx="160" cy="312" rx="100" ry="14" fill="#2C3A33" opacity=".85"/><ellipse cx="160" cy="310" rx="92" ry="9" fill="#A9B5A0"/>
+<g stroke="#8B7B5E" stroke-width="3" fill="none" stroke-linecap="round"><path d="M290 400C285 320 300 240 330 160"/><path d="M310 400C320 330 340 270 370 210"/><path d="M270 400C255 340 240 290 215 250"/></g>
+<g fill="#B79B6A"><circle cx="330" cy="156" r="9"/><circle cx="370" cy="206" r="8"/><circle cx="214" cy="246" r="8"/><circle cx="318" cy="190" r="6"/><circle cx="345" cy="245" r="6"/></g>
+<g fill="#A9B5A0" opacity=".9"><ellipse cx="300" cy="300" rx="22" ry="8" transform="rotate(-40 300 300)"/><ellipse cx="330" cy="330" rx="22" ry="8" transform="rotate(40 330 330)"/><ellipse cx="262" cy="330" rx="20" ry="7" transform="rotate(-30 262 330)"/></g>
+<circle cx="110" cy="450" r="26" fill="#D8C6B2"/><circle cx="165" cy="470" r="18" fill="#C9A097"/>
+</svg>

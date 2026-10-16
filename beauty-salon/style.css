@@ -1,0 +1,57 @@
+/* 美麗軒 — 柔霧編輯風:霧米白 / 乾燥玫瑰 / 鼠尾草綠 / 淡金 / 深墨綠(無紫、無桃紅) */
+:root{--bg:#F7F3EE;--ink:#3B3633;--rose:#C9A097;--sage:#A9B5A0;--gold:#B79B6A;--deep:#2C3A33;--rose-ink:#8A5A50;--gold-ink:#765E2E}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:300 16px/1.9 "Noto Sans TC",system-ui,"PingFang HK",sans-serif;overflow-x:hidden}
+h1,h2,h3{font-family:"Noto Serif TC",serif;font-weight:400;line-height:1.35}
+em{font-family:"Cormorant Garamond",serif;font-style:italic}
+a{color:var(--deep)}
+.hero{display:grid;gap:28px;padding:36px 24px 44px;max-width:1080px;margin:auto}
+.eyebrow{margin:0;letter-spacing:.3em;font-size:.78rem;text-transform:uppercase;color:var(--gold-ink)}
+.hero h1{font-weight:300;font-size:clamp(2.8rem,14vw,4.8rem);letter-spacing:.12em;margin:.3em 0}
+.hero h1 em{font-size:.5em;letter-spacing:.2em;color:var(--rose-ink)}
+.lead{margin:0 0 24px;letter-spacing:.08em}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;min-height:48px;padding:0 26px;text-decoration:none;letter-spacing:.1em;border-radius:999px;border:1px solid var(--deep);transition:background .4s,color .4s}
+.btn.dark{background:var(--deep);color:var(--bg)}.btn.dark:hover{background:var(--gold);border-color:var(--gold)}
+.btn.line{color:var(--deep)}.btn.line:hover{background:var(--sage)}
+.arch{border-radius:999px 999px 0 0;overflow:hidden;max-width:360px;width:100%;justify-self:center;border-bottom:3px solid var(--gold);animation:fade 1.4s both}
+.arch img{display:block;width:100%;height:auto}
+nav{position:sticky;top:0;z-index:5;background:#F7F3EEee;backdrop-filter:blur(6px);border-block:1px solid #b79b6a55;display:flex;gap:4px;overflow-x:auto;white-space:nowrap;padding:6px 12px;scrollbar-width:none}
+nav a{padding:8px 16px;text-decoration:none;color:var(--ink);letter-spacing:.12em;font-size:.92rem;position:relative}
+nav a:after{content:"";position:absolute;left:16px;right:16px;bottom:4px;height:1px;background:var(--gold);transform:scaleX(0);transition:transform .35s}
+nav a:hover:after,nav a:focus-visible:after{transform:scaleX(1)}
+main{max-width:900px;margin:auto;padding:0 24px}section{padding:56px 0 8px;scroll-margin-top:50px}
+h2{font-size:1.7rem;letter-spacing:.14em;margin:0 0 28px;font-weight:300}
+h2 em{display:block;color:var(--gold-ink);font-size:1.1rem;letter-spacing:.1em;margin-bottom:2px}
+h3{font-size:1.1rem;margin:0 0 6px}
+.cards{list-style:none;margin:0;padding:0;display:grid;gap:20px}
+.cards li{background:#fff;border:1px solid #b79b6a40;border-radius:6px 6px 120px 6px;overflow:hidden}
+.cards img{width:100%;height:120px;object-fit:cover;display:block}
+.cards div{padding:16px 22px 22px}.cards p{margin:0;font-size:.95rem}.cards b{font-weight:500;color:var(--deep);letter-spacing:.06em}
+.tag{display:inline-block;font-size:.72rem;letter-spacing:.2em;background:var(--rose-ink);color:#fff;padding:0 10px;border-radius:99px;margin-bottom:4px}
+.lists{display:grid;gap:36px}
+.grp h3{display:flex;align-items:baseline;gap:14px;border-bottom:1px solid var(--gold);padding-bottom:8px;margin-bottom:6px;font-size:1.2rem}
+.no{font:italic 500 1.1rem "Cormorant Garamond",serif;color:var(--rose-ink)}
+ul.price{list-style:none;padding:0;margin:0}ul.price li{display:flex;justify-content:space-between;gap:16px;padding:10px 0;border-bottom:1px solid #3b363322}
+ul.price b{font-weight:400;white-space:nowrap;color:var(--deep)}
+.about p{font-size:1.1rem;padding:28px;background:var(--sage);color:var(--deep);border-radius:200px 200px 6px 6px/70px 70px 6px 6px;text-align:center;margin:0}
+.note{color:#6b615b;font-size:.88rem}
+.quotes{display:grid;gap:16px}
+blockquote{margin:0;padding:22px 24px;background:#EFE3DC;border-radius:6px;font-family:"Noto Serif TC",serif;border-top:2px solid var(--rose)}
+blockquote cite{display:block;margin-top:8px;font:300 .85rem "Noto Sans TC",sans-serif;font-style:normal;color:#6f6560}
+details{border-bottom:1px solid #3b363322;padding:12px 0}summary{cursor:pointer;min-height:32px;letter-spacing:.06em}summary::marker{color:var(--gold)}details p{margin:.4em 0}
+.plain{padding-left:1.2em}.plain li::marker{color:var(--gold)}
+iframe{width:100%;height:280px;border:0;border-radius:6px;filter:saturate(.6) sepia(.15)}
+.wa{display:flex;align-items:center;justify-content:center;background:var(--deep);color:var(--bg);min-height:54px;border-radius:999px;font-size:1.02rem;letter-spacing:.12em;text-decoration:none;border:1px solid var(--gold)}
+.wa:hover{background:#3a4d43}
+.fix{position:fixed;bottom:14px;left:14px;right:14px;max-width:520px;margin:auto;z-index:9;box-shadow:0 8px 24px #2c3a3340}
+footer{text-align:center;font-size:.82rem;letter-spacing:.1em;color:#d9d2c6;background:var(--deep);padding:28px 20px 110px;margin-top:56px}
+.js .rv{opacity:0;transform:translateY(10px);transition:opacity 1s,transform 1s}.js .rv.in{opacity:1;transform:none}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@media(min-width:780px){.hero{grid-template-columns:1.2fr .8fr;align-items:center;padding:72px 32px}.cards{grid-template-columns:repeat(3,1fr)}.lists{grid-template-columns:1fr 1fr;gap:40px 56px}.quotes{grid-template-columns:repeat(3,1fr)}nav{justify-content:center}}
+
+.shop-photo{margin:0 0 20px}.shop-photo img{display:block;width:100%;height:auto;border-radius:200px 200px 6px 6px/90px 90px 6px 6px}
+.shop-photo figcaption{text-align:center;font-size:.8rem;letter-spacing:.12em;color:#6b615b;margin-top:8px}
+.arch picture{display:block}.arch{max-width:300px}@media(min-width:780px){.arch{max-width:360px}}.arch img{background:#e6e0d6}
+.cards img{background:#e6e0d6}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
