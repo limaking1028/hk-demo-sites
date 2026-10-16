@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://limaking1028.github.io/hk-demo-sites/sitemap.xml
