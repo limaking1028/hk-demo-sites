@@ -102,3 +102,8 @@ details p{margin:0 0 16px;color:var(--mut)}
 .form input::placeholder,.form textarea::placeholder{color:#5F594B;opacity:1}
 .form select{text-overflow:clip;white-space:normal;height:auto;min-height:50px}
 @media(max-width:480px){.form select{font-size:15px;padding:11px 10px}.annual-card .big{font-size:clamp(28px,8.4vw,46px)}}
+
+.domain-note{margin-top:16px}
+.price{flex-wrap:wrap}.price span{white-space:nowrap}
+
+.note{margin:0 0 18px}.nomaint{display:inline-block;background:#FFF1B8;color:#4A3A00;border:1.5px solid #8A6D00;font-weight:800;font-size:14px;padding:3px 12px;border-radius:8px}
