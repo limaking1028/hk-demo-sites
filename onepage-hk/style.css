@@ -122,3 +122,8 @@ details p{margin:0 0 16px;color:var(--mut)}
 .dfig .cap{color:var(--ink);font-size:14px}
 @media(min-width:720px){.dplans{grid-template-columns:repeat(3,1fr)}}
 @media(min-width:980px){.design-grid{grid-template-columns:1.6fr 1fr;gap:48px;align-items:center}.dplans{grid-template-columns:1fr}.top nav{gap:18px}}
+
+.demo-tag{display:inline-block;margin-left:8px;vertical-align:middle;background:var(--coral-l);color:#7A2E1D;font-size:12px;font-weight:700;padding:1px 9px;border-radius:999px;letter-spacing:.04em}
+.swipe-hint{display:none;margin:0 0 10px;font-size:13px;color:var(--mut)}
+@media(max-width:719px){.swipe-hint{display:block}.cases{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain;padding:2px 2px 14px;margin:0 -2px}.cases .case{flex:0 0 82%;scroll-snap-align:start}.cases .rv{opacity:1;transform:none}}
+@media(max-width:520px){.wa{right:12px;bottom:12px;min-height:44px;padding:8px 14px;font-size:14px;gap:6px}.wa svg{width:20px;height:20px}#works{padding-bottom:104px}}
