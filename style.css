@@ -36,3 +36,5 @@ footer{padding:28px 20px;text-align:center;color:var(--grey);font-size:.85rem;bo
 @keyframes slide{to{transform:translateX(-50%)}}
 @media(min-width:860px){.case a{grid-template-columns:.8fr 1.2fr;align-items:center;padding:36px}.steps ol{grid-template-columns:repeat(3,1fr);border-top:0;gap:20px}.steps li{flex-direction:column;border:1px solid #ffffff2a;border-radius:16px;padding:24px}.hero{padding:96px 0 56px}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+.foot-cta{margin:0 0 14px}.foot-cta a{color:var(--lime);text-decoration:underline;text-underline-offset:4px;display:inline-block;padding:10px 4px;min-height:24px}.foot-cta a:hover{color:var(--paper)}
