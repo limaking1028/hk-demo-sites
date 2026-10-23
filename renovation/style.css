@@ -192,10 +192,11 @@ footer a{color:#fff}
 @media (min-width:960px){.hero-in{padding-bottom:64px}.trust{grid-template-columns:repeat(4,1fr)}.ba{flex-basis:calc(50% - 7px)}}
 
 /* v2：把手先拖得、相片其餘位置可橫掃轉案例 */
-.cmp{touch-action:pan-x pan-y;cursor:ew-resize;-webkit-user-select:none;user-select:none}
+.cmp{touch-action:pan-y;cursor:ew-resize;-webkit-user-select:none;user-select:none}
 .cmp img{-webkit-user-drag:none;pointer-events:none}
 .slide{pointer-events:none;touch-action:auto}
-.knob{position:absolute;top:0;bottom:0;left:var(--pos);width:44px;margin-left:-22px;z-index:5;touch-action:pan-y;cursor:ew-resize}
+.knob{position:absolute;top:0;bottom:0;left:var(--pos);width:56px;margin-left:-28px;z-index:5;touch-action:none;pointer-events:none}
+.cmp.dragging{touch-action:none}
 .cmp:has(.slide:focus-visible)::before{outline:3px solid var(--orange-lt);outline-offset:2px}
 .cmp[data-mode="before"]::after,.cmp[data-mode="before"]::before,.cmp[data-mode="after"]::after,.cmp[data-mode="after"]::before{opacity:0}
 .cmp[data-mode="before"] .knob,.cmp[data-mode="after"] .knob{display:none}

@@ -61,20 +61,18 @@
 <footer><div class="wrap"><p class="f-name">硯岫裝修工程（示範）</p><p>九龍觀塘示範街 1 號（虛構）· 星期一至六 09:00–19:00</p><p class="f-demo">示範網站，由<a href="https://limaking1028.github.io/hk-demo-sites/onepage-hk/">一頁通 OnePage HK</a> 製作。</p><p class="f-dis">本網站為示範用途，公司名稱、資格、評價、案例及圖片均為虛構，圖片為 AI 生成示意圖，不構成任何報價或承諾。</p></div></footer>
 <div class="mbar" role="navigation" aria-label="快速查詢"><a class="m1" href="https://limaking1028.github.io/hk-demo-sites/onepage-hk/#enquiry">查詢報價</a><a class="m2" href="https://limaking1028.github.io/hk-demo-sites/onepage-hk/#enquiry">免費度尺</a></div>
 <script>
-document.querySelectorAll(".ba").forEach(function(a){var c=a.querySelector(".cmp"),r=a.querySelector(".slide"),k=a.querySelector(".knob"),bs=a.querySelectorAll(".tog button"),drag=null;
+document.querySelectorAll(".ba").forEach(function(a){var c=a.querySelector(".cmp"),r=a.querySelector(".slide"),bs=a.querySelectorAll(".tog button"),drag=null,tp=null,px=null,raf=0;
 function set(v,fromBtn){v=Math.max(0,Math.min(100,Math.round(v)));r.value=v;c.style.setProperty("--pos",v+"%");var m=v>=100?"before":v<=0?"after":"cmp";c.setAttribute("data-mode",m);bs.forEach(function(b){var on=fromBtn?b===fromBtn:(m=="before"?b.dataset.v=="100":m=="after"?b.dataset.v=="0":b.dataset.v=="50");b.setAttribute("aria-pressed",on?"true":"false")})}
-function at(e){var b=c.getBoundingClientRect();return (e.clientX-b.left)/b.width*100}
+function at(x){var b=c.getBoundingClientRect();return (x-b.left)/b.width*100}
+function sched(x){px=x;if(!raf)raf=requestAnimationFrame(function(){raf=0;if(px!==null)set(at(px))})}
 r.addEventListener("input",function(){set(r.value)});
 bs.forEach(function(b){b.addEventListener("click",function(){set(+b.dataset.v,b)})});
-var tp=null;
-k.addEventListener("pointerdown",function(e){if(e.pointerType=="mouse"){if(e.button!==0)return;drag=e.pointerId;k.setPointerCapture(e.pointerId);r.focus({preventScroll:true});e.preventDefault()}else{tp={id:e.pointerId,x:e.clientX,y:e.clientY}}});
-k.addEventListener("pointermove",function(e){if(drag===e.pointerId){set(at(e));return}if(tp&&tp.id===e.pointerId){var dx=Math.abs(e.clientX-tp.x),dy=Math.abs(e.clientY-tp.y);if(dx<6&&dy<6)return;if(dx>dy){drag=e.pointerId;tp=null;try{k.setPointerCapture(e.pointerId)}catch(x){}set(at(e))}else{tp=null}}});
-function end(e){if(tp&&tp.id===e.pointerId)tp=null;if(drag===e.pointerId){drag=null;try{k.releasePointerCapture(e.pointerId)}catch(x){}}}
-k.addEventListener("pointerup",end);k.addEventListener("pointercancel",end);
-var md=false;c.addEventListener("pointerdown",function(e){if(e.pointerType=="mouse"&&e.target!==k&&e.button===0){md=true;c.setPointerCapture(e.pointerId);set(at(e));r.focus({preventScroll:true});e.preventDefault()}});
-c.addEventListener("pointermove",function(e){if(md)set(at(e))});
-c.addEventListener("pointerup",function(e){md=false});c.addEventListener("pointercancel",function(){md=false});
-c.addEventListener("click",function(e){if(e.target===k||md)return;if(e.pointerType&&e.pointerType=="mouse")return;set(at(e))});
+function start(e){drag=e.pointerId;tp=null;try{c.setPointerCapture(e.pointerId)}catch(x){}c.classList.add("dragging");sched(e.clientX)}
+c.addEventListener("pointerdown",function(e){if(e.pointerType=="mouse"){if(e.button!==0)return;start(e);r.focus({preventScroll:true});e.preventDefault()}else if(drag===null){tp={id:e.pointerId,x:e.clientX,y:e.clientY}}});
+c.addEventListener("pointermove",function(e){if(drag===e.pointerId){e.preventDefault();sched(e.clientX);return}if(tp&&tp.id===e.pointerId){var dx=Math.abs(e.clientX-tp.x),dy=Math.abs(e.clientY-tp.y);if(dx<4&&dy<4)return;if(dx>=dy){e.preventDefault();start(e)}else{tp=null}}});
+function end(e){if(tp&&tp.id===e.pointerId){if(e.type=="pointerup")set(at(e.clientX));tp=null}if(drag===e.pointerId){drag=null;c.classList.remove("dragging");try{c.releasePointerCapture(e.pointerId)}catch(x){}}}
+c.addEventListener("pointerup",end);c.addEventListener("pointercancel",end);c.addEventListener("lostpointercapture",function(e){if(e.target===c)end(e)});
+c.addEventListener("dragstart",function(e){e.preventDefault()});
 set(50)});
 (function(){var l=document.querySelector(".ba-list"),d=document.querySelectorAll(".dots i");function w(){return l.querySelector(".ba").offsetWidth+14}function go(x){l.scrollBy({left:x*w(),behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"})}document.querySelector(".pv").addEventListener("click",function(){go(-1)});document.querySelector(".nx").addEventListener("click",function(){go(1)});function upd(){var n=d.length,ww=w(),v=Math.max(1,Math.min(n,Math.floor((l.clientWidth+14)/ww+0.05))),mx=l.scrollWidth-l.clientWidth,i=Math.round(l.scrollLeft/ww);if(mx>0&&l.scrollLeft>=mx-4)i=n-v;i=Math.max(0,Math.min(n-v,i));d.forEach(function(e,j){e.classList.toggle("on",j>=i&&j<i+v)})}l.addEventListener("scroll",upd,{passive:true});addEventListener("resize",upd);upd()})();
 </script>
