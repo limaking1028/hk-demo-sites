@@ -135,3 +135,9 @@ details p{margin:0 0 16px;color:var(--mut)}
 .mnote{margin:18px 0 0}
 @media(min-width:980px){#monthly .mplans{grid-template-columns:repeat(3,1fr);max-width:960px}}
 @media(min-width:980px){.cases{grid-template-columns:repeat(6,1fr)}.cases .case{grid-column:span 2}.cases .case:nth-child(4),.cases .case:nth-child(5){grid-column:span 3}}
+/* hero-works preview */
+.hero-top{padding:22px 0 6px}.hero-top h1{margin-bottom:10px}.hero-top .lead{margin-bottom:0}
+.hero-top+#works{padding-top:14px}.hero-top+#works .eyebrow{display:none}.hero-top+#works h2{font-size:22px;margin:0 0 4px}.hero-top+#works .sec-lead{font-size:14px;margin-bottom:10px}
+.hero-more{padding:40px 0 56px}.more-h{margin:0 0 14px}
+@media(max-width:719px){.hero-top .badge{margin-bottom:8px}.hero-top h1{font-size:30px;line-height:1.2}}
+@media(min-width:980px){.hero-top{padding:44px 0 8px}.hero-top+#works{padding-top:18px}.hero-more{padding:72px 0 80px}}
