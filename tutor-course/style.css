@@ -1,7 +1,7 @@
 /* 晴空藝術工作室 — 明亮友善學院感 × 貼紙標籤 × 圓角卡片 */
 :root{--bg:#FBF8F2;--navy:#1F2A5C;--sun:#F5B83D;--sky:#CFE9F8;--sky-d:#DDF0FA;--ink:#1F2A5C;--muted:#454E78;--r:22px}
 *{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.75 "Noto Sans TC",system-ui,sans-serif;overflow-x:hidden;padding-bottom:84px}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.75 "Noto Sans TC",system-ui,sans-serif;overflow-x:hidden}
 img{max-width:100%;height:auto;display:block}
 a{color:var(--navy)}
 .skip{position:absolute;left:-999px;top:8px;background:var(--navy);color:#fff;padding:8px 14px;border-radius:99px;z-index:50}.skip:focus{left:8px}
@@ -87,7 +87,7 @@ footer{background:var(--navy);color:#fff;padding:26px 18px 110px;text-align:cent
  table{border-spacing:0;border:3px solid var(--navy);border-radius:18px;overflow:hidden;background:#fff}thead{position:static}tr{display:table-row;border:0;border-radius:0;padding:0;box-shadow:none}
  th,td{display:table-cell;vertical-align:middle;padding:14px 16px;text-align:left;border-top:1px solid #1F2A5C33}td::before{display:none}td{justify-content:initial}
  thead th{background:var(--navy);color:#fff;border:0}th[scope=row]{display:table-cell;vertical-align:middle;padding:14px 16px;font-size:1.1rem;border-top:1px solid #1F2A5C33}}
-@media(min-width:960px){body{padding-bottom:0}.top nav{display:flex;gap:24px}.top nav a{text-decoration:none;font-weight:700;padding:10px 4px}.top nav a:hover{text-decoration:underline;text-decoration-color:var(--sun);text-decoration-thickness:3px}
+@media(min-width:960px){.top nav{display:flex;gap:24px}.top nav a{text-decoration:none;font-weight:700;padding:10px 4px}.top nav a:hover{text-decoration:underline;text-decoration-color:var(--sun);text-decoration-thickness:3px}
  .hero{grid-template-columns:1.05fr .95fr;align-items:center;gap:48px;padding:36px 0 64px}.grid4{grid-template-columns:repeat(4,1fr)}
  .split{grid-template-columns:1fr 1fr;gap:56px}.tutor-card{grid-template-columns:auto 1fr;gap:36px;padding:40px;align-items:center}.avatar{width:140px;height:140px;font-size:3.6rem}
  .quotes{grid-template-columns:repeat(3,1fr)}.band-sky,.band-sun,.band-cream{margin:0 calc(50% - 50vw);padding-left:calc(50vw - 50%);padding-right:calc(50vw - 50%)}
